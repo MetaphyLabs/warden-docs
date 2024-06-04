@@ -1,0 +1,58 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+    "/v1/health": {
+    "get": {
+    "operationId": "health",
+    "parameters": [],
+    "responses": {
+    "200": {
+    "description": ""
+    }
+    }
+    }
+    },
+    "/v1/verify": {
+    "get": {
+    "operationId": "verify",
+    "parameters": [],
+    "responses": {
+    "200": {
+    "description": "",
+    "content": {
+    "application/json": {
+    "schema": {
+    "type": "string"
+    }
+    }
+    }
+    },
+    "201": {
+    "description": "The record has been successfully created."
+    }
+    }
+    }
+    }
+    },
+    "info": {
+    "title": "Warden API",
+    "description": "The API for the WardenAI project",
+    "version": "1.0",
+    "contact": {}
+    },
+    "tags": [
+    {
+    "name": "metaphytech",
+    "description": ""
+    }
+    ],
+    "servers": [
+    {
+    "url": "http://localhost:9000",
+    "description": "Warden AI API Server v1"
+    }
+    ],
+    "components": {
+    "schemas": {}
+    }
+    }

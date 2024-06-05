@@ -1,33 +1,36 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: Overview
+description: General information about the API.
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+The Warden AI API uses HTTP RPC-style methods and generally follow the schema:
 
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
-
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
 ```
+https://api.warden.metaphy.ai/{version}/{service}.{method}
+```
+
+For example `GET https://api.warden.metaphy.ai/v1/predictions.list` to list all prediction queries from an API.
+
+## HTTP Methods
+
+We strictly use only `GET` and `POST` methods. `PUT` and `DELETE` are not used.
+
+### `GET`
+
+`GET` methods are used for reading data. Filtering, sorting, or pagination is done via query parameters.
+
+```http
+curl "https://api.warden.metaphy.ai/v1/verify" \
+  -H "Authorization: Bearer <ROOT_KEY>"
+```
+
+
+### `POST`
+
+`POST` methods are used for creating, updating, and deleting data. Data is passed as `application/json` in the request body.
+
+```http
+curl -XPOST "https://api.warden.metaphy.ai/v1/predict/video" \
+  -H "Authorization: Bearer <ROOT_KEY>" \
+  -H "Content-Type: application/json" \
+  -d '{"videoUrl": "https://cdn.xyz.abc/123.mp4", "name": "My Video"}'

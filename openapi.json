@@ -1,58 +1,155 @@
 {
     "openapi": "3.0.0",
     "paths": {
-    "/v1/health": {
-    "get": {
-    "operationId": "health",
-    "parameters": [],
-    "responses": {
-    "200": {
-    "description": ""
-    }
-    }
-    }
-    },
-    "/v1/verify": {
-    "get": {
-    "operationId": "verify",
-    "parameters": [],
-    "responses": {
-    "200": {
-    "description": "",
-    "content": {
-    "application/json": {
-    "schema": {
-    "type": "string"
-    }
-    }
-    }
-    },
-    "201": {
-    "description": "The record has been successfully created."
-    }
-    }
-    }
-    }
+      "/v1/health": {
+        "get": {
+          "operationId": "health",
+          "summary": "Health check",
+          "description": "Checks if the API is healthy",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "predictions"
+          ]
+        }
+      },
+      "/v1/verify": {
+        "get": {
+          "operationId": "verify",
+          "summary": "Verify API key",
+          "description": "Verifies the API key",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "predictions"
+          ]
+        }
+      },
+      "/v1/predict/video": {
+        "post": {
+          "operationId": "predictVideo",
+          "summary": "Predict a video",
+          "description": "Predicts a video using the model",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "predictions"
+          ]
+        }
+      }
     },
     "info": {
-    "title": "Warden API",
-    "description": "The API for the WardenAI project",
-    "version": "1.0",
-    "contact": {}
+      "title": "Warden API",
+      "description": "The API for the WardenAI project",
+      "version": "1.0",
+      "contact": {}
     },
     "tags": [
-    {
-    "name": "metaphytech",
-    "description": ""
-    }
+      {
+        "name": "v1",
+        "description": ""
+      }
     ],
     "servers": [
-    {
-    "url": "http://localhost:9000",
-    "description": "Warden AI API Server v1"
-    }
+      {
+        "url": "http://localhost:9000",
+        "description": "Warden AI API Server v1"
+      }
     ],
     "components": {
-    "schemas": {}
+      "schemas": {}
     }
-    }
+  }

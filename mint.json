@@ -5,7 +5,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/fav.svg",
+  "favicon": "./tomobo-ring.svg",
   "colors": {
     "primary": "#6457FF",
     "light": "#6457FF",
@@ -24,7 +24,6 @@
       "name": "JetMetaphy",
       "url": "https://jetmetaphy.com"
     }
-    
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
@@ -56,11 +55,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "pages": ["introduction", "quickstart", "development"]
     },
     {
       "group": "Essentials",
@@ -75,9 +70,7 @@
     },
     {
       "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
+      "pages": ["api-reference/introduction"]
     },
     {
       "group": "Endpoint Examples",
@@ -85,14 +78,23 @@
         "api-reference/endpoint/get-v1health",
         "api-reference/endpoint/get-v1verify"
       ]
+    },
+
+    {
+      "group": "predictions",
+      "pages": [
+        "api-reference/endpoint/predictions/health-check",
+        "api-reference/endpoint/predictions/verify-api-key",
+        "api-reference/endpoint/predictions/predict-a-video"
+      ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/metaphylabs",
+    "github": "https://github.com/MetaphyLabs",
+    "linkedin": "https://www.linkedin.com/company/metaphy-labs/"
   },
-  "openapi": ["./openapi.json"],
+  "openapi":["./openapi.json"],  
   "api": {
     "baseUrl": "http://localhost:9000/",
     "auth": {
